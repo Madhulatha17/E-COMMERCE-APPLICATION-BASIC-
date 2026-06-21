@@ -1,0 +1,33 @@
+@model List<ECommerceApp.Models.CartItem>
+
+<h2>Shopping Cart</h2>
+
+<table border="1">
+
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Action</th>
+</tr>
+
+@foreach(var item in Model)
+{
+<tr>
+
+<td>@item.ProductName</td>
+
+<td>@item.Price</td>
+
+<td>@item.Quantity</td>
+
+<td>
+<a href="/Cart/Remove?id=@item.ProductId">
+Remove
+</a>
+</td>
+
+</tr>
+}
+
+</table>
